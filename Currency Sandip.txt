@@ -1,0 +1,16 @@
+<body>
+    <%
+        int choice = Integer.parseInt(request.getParameter("s1"));
+        float amt = Float.parseFloat(request.getParameter("t1"));
+        float camt = 0f;
+        CurrencyConverterLocal cl = new CurrencyConverter(); // Creates an instance of CurrencyConverter
+        
+        if (choice == 1) {
+            camt = cl.DToR(amt); // Conversion from Dollar to Rupees
+        } else {
+            camt = cl.RToD(amt); // Conversion from Rupees to Dollar
+        }
+        
+        out.println("Converted Amount " + camt); // Outputs the converted amount
+    %>
+</body>

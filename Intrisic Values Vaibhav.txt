@@ -1,0 +1,44 @@
+Intrisic Values
+
+
+<%--
+ Document : JSPIntrinsic
+ Created on : 8 Oct, 2024, 9:55:34 AM
+ Author : spdc
+--%>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+ <head>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <title>Intrinsic Object example</title>
+ </head>
+ <body>
+ <h3>Intrinsic Object in JSP</h3>
+ <h3> Using the Request object</h3>
+ <p>Request method: <%= request.getMethod() %></p>
+ <p>Request URI: <%= request.getRequestURI() %></p>
+ <h3> Using the Response object</h3>
+ <p>Content type: <%= response.getContentType() %></p>
+ <h3>Using the Session Object</h3>
+ <%
+ session.setAttribute("user","Khushboo Yadav");
+ String user= (String) session.getAttribute("user");
+ %>
+ <p>Session User: <%= user %></p>
+ <h3>Using the Application Object</h3>
+ <%
+ application.setAttribute("appname","MY JSP Page");
+ String appname= (String) application.getAttribute("appname");
+ %>
+ <p>Application NAme: <%= appname %></p>
+ <h3>Using the out object</h3>
+ <p>This is an example of out object.</p>
+ <p>It write directly to the response: <%= "Hello Khushboo" %></p>
+ <h3>Using the config object</h3>
+ <p>Servlet context path: <%= config.getServletContext().getContextPath() %></p>
+ </body>
+</html>
+
+
+
